@@ -45,12 +45,19 @@
                 Console.Write("Would you like to order another coffe? Yes or No: ");
                 // This is the user input for whether they want to continue ordering
                 string NextOrder = Console.ReadLine().ToLower();
+                // We run another loop to check if the user input is valid (yes or no)
+                while (NextOrder != "yes" && NextOrder != "no")
+                {
+                    Console.WriteLine("Invalid option. Please try again.");
+                    Console.Write("Would you like to order another coffe? Yes or No: ");
+                    NextOrder = Console.ReadLine().ToLower();
+                }
                 if (NextOrder == "yes")
                 {
-                    // If yes, we continue the loop
+                    // If yes, we continue the orignial loop
                     continue;
                 }
-                else
+                else if (NextOrder == "no")
                 {
                     // If no, we print the total price of the order and break the loop
                     Console.WriteLine("Your total is: " + OrderTotal + " kr");
