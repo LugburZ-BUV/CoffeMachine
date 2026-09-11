@@ -44,6 +44,7 @@
                 }
                 Console.Write("Would you like to order another coffe? Yes or No: ");
                 // This is the user input for whether they want to continue ordering
+                // We use ToLower to ensure we only need to check for lowercase "yes" and "no"
                 string NextOrder = Console.ReadLine().ToLower();
                 // We run another loop to check if the user input is valid (yes or no)
                 while (NextOrder != "yes" && NextOrder != "no")
